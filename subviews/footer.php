@@ -7,7 +7,7 @@
                         echo " | ";
                         echo $_SESSION['name'];
                         echo " | ";
-                        echo "&copy; 2013 Hori Revens";
+                        echo "&copy; Hori Revens 2013";
                         ?>
                 </div>
         </div>	

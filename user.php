@@ -10,7 +10,6 @@
     }else{
         $name = '';
     } 
-    
 ?>
 
 <!DOCTYPE html>
@@ -43,20 +42,22 @@
                         <input type="submit" name="reset" value="Reset" class="btn">
                     </form>
                 </legend>
-                
-                <div class="row-fluid">
-                    <div class="span4">
-                    <?php
-                        //PAGINATION
-                        $pgn->sql_all = "SELECT * FROM user WHERE name LIKE '%$name%'";
-                        $pgn->sql_param = "&name=$name";
-                        $pgn->render();               
-                    ?>
-                    </div>
-                    <div class="span4" style="text-align: center; margin-top: 10px;"><?php include "subviews/msg.php";?></div>
-                    <div class="span4">&nbsp;</div>
+            </div>
+            
+            <div class="row-fluid">
+                <div class="span4">
+                <?php
+                    //PAGINATION
+                    $pgn->sql_all = "SELECT * FROM user WHERE name LIKE '%$name%'";
+                    $pgn->sql_param = "&name=$name";
+                    $pgn->render();               
+                ?>
                 </div>
-                
+                <div class="span4" style="text-align: center; margin-top: 10px;"><?php include "subviews/msg.php";?></div>
+                <div class="span4">&nbsp;</div>
+            </div>
+              
+            <div class="row-fluid">
                 <table class="table table-bordered table-condensed table-striped" width="100%">
                     <tr>
                         <th width="8%" style="text-align: center;">No. ID</th>
@@ -74,7 +75,6 @@
                         $list = $db->fetcharray($sql);
                         foreach($list as $data){
                     ?>
-                    
                     <tr> 
                         <td style="text-align: center;"><?php echo $data['id']; ?></td>
                         <td style="text-align: center;"><?php echo $data['name']; ?></td>
@@ -100,7 +100,7 @@
                     </tr>
                     <?php } ?>
                 </table>
-                
+             
                 <?php
                     if($_GET['act'] == 'delete'){
                         $id = $_GET['id'];

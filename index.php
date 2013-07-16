@@ -23,11 +23,11 @@
                         <table width="100%" class="cst_table">
                             <tr>
                                 <td>Username</td><td width="3%">:</td>
-                                <td><input type="text" name="username" class="span3" id="username"></td>
+                                <td><input type="text" name="username" class="span3" id="username" placeholder="admin"></td>
                             </tr>
                             <tr>
                                 <td>Password</td><td>:</td>
-                                <td><input type="password" name="password" class="span3"></td>
+                                <td><input type="password" name="password" class="span3" placeholder="admin"></td>
                             </tr>
                             <tr>
                                 <td colspan="2">&nbsp;</td>

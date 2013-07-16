@@ -1,8 +1,5 @@
 <?php
 
-//require "class_db.php";
-//$db = new database();
-
 class custom extends database{
     
     function dateToEnglish($date){ //2013-06-08 => 08th June 2013
@@ -163,7 +160,6 @@ class custom extends database{
         echo "<option value='icon-shopping-cart'>Icon Cart</option>";
         echo "<option value='icon-arrow-right'>Icon Arrow Right</option>";
     }
-  
 }
 /*
  * To change this template, choose Tools | Templates

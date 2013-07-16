@@ -1,6 +1,6 @@
 <?php
 
-include "libraries/referer.php";
+require_once "libraries/referer.php";
 
 $log = $_SESSION['name'];
 

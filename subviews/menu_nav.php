@@ -8,7 +8,7 @@
         <li class='has-sub'><a href="#">Master</a>
             <ul>
                 <li><a href="?page=user"><i class="icon-user"></i>&nbsp;User</a></li>
-                <li><a href="upload.php"><i class="icon-user"></i>&nbsp;Upload</a></li>
+                <li><a href="album.php"><i class="icon-picture"></i>&nbsp;Album</a></li>
             </ul>
         </li>
     </ul>

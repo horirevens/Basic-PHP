@@ -9,7 +9,6 @@
         
         <script type="text/javascript">
             $(document).ready(function(){
-                $('.dropdown-toggle').dropdown();
                 $('#form1').validationEngine();
                 $("#dob").datepicker({
                     dateFormat: 'yy/mm/dd',
@@ -17,6 +16,7 @@
                     changeYear: true,
                     yearRange: '1940:2030'
                 });
+                //$("#kecamatan").focus();
             })
             
         </script>
@@ -28,9 +28,9 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <legend>ALBUM - ADD&nbsp;
-                        <a href="album_add.php" class="btn"><i class="icon-plus"></i>&nbsp;Add</a>
-                        <a href="album.php" class="btn"><i class="icon-list-alt"></i>&nbsp;User</a>
+                    <legend>PAC - ADD&nbsp;
+                        <a href="pac_add.php" class="btn"><i class="icon-plus"></i>&nbsp;Add</a>
+                        <a href="pac.php" class="btn"><i class="icon-list-alt"></i>&nbsp;PAC</a>
                     </legend> 
                 </div>
             </div>
@@ -43,32 +43,40 @@
             
             <?php
                 $id = $_GET['id'];
-                $sql = "SELECT * FROM album WHERE id='$id'";
+                $sql = "SELECT * FROM gerindra_pac WHERE id='$id'";
                 $data = $db->fetchdata($sql);
             ?>
             
             <div class="row-fluid">
                 <div class="span12">
-                    <form name="form1" id="form1" action="album_proc.php" method="POST">
+                    <form name="form1" id="form1" action="pac_proc.php" method="POST">
                         <table class="table table-bordered table-condensed table-striped" width="100%">
                             <tr>
-                                <td>ID</td>
-                                <td><input type="text" name="id" class="span2" readonly="readonly" value="<?php echo $data['id']; ?>"></td>
+                                <td width="15%">No. ID</td>
+                                <td><input type="text"  name="id" class="span1" readonly="readonly" value="<?php echo $data['id']; ?>"></td>
                             </tr>
                             <tr>
-                                <td>Name</td>
-                                <td><input type="text" name="name" class="span5 validate[required,custom[onlyLetterSp]]" value="<?php echo $data['name']; ?>"></td>
+                                <td>Kecamatan</td>
+                                <td><input type="text" id="kecamatan" name="kecamatan" class="span2" value="<?php echo $data['kecamatan']; ?>"></td>
                             </tr>
                             <tr>
-                                <td>Description</td>
-                                <td><textarea name="description" class="span8 validate[maxSize[33]]" rows="2"><?php echo $data['description']; ?></textarea></td>
+                                <td>Jumlah Desa</td>
+                                <td><input type="text" name="jml_desa" class="span1" value="<?php echo $data['jml_desa']; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah Kelurahan</td>
+                                <td><input type="text" name="jml_kelurahan" class="span1" value="<?php echo $data['jml_kelurahan']; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah Ranting</td>
+                                <td><input type="text" name="jml_ranting" class="span1" value="<?php echo $data['jml_ranting']; ?>"></td>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
                                     <input type="submit" name="save" class="btn" value="Save">
                                     <input type="hidden" name="action" class="btn" value="update">
-                                    &nbsp;<a href="album.php" class="btn">Back</a>
+                                    &nbsp;<a href="pac.php" class="btn">Back</a>
                                 </td>
                             </tr>
                         </table>    

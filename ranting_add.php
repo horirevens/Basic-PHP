@@ -16,7 +16,7 @@
                     changeYear: true,
                     yearRange: '1940:2030'
                 });
-                $("#name").focus();
+                $("#desa").focus();
             })
             
         </script>
@@ -28,35 +28,53 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <legend>ALBUM - ADD&nbsp;
-                        <a href="album_add.php" class="btn"><i class="icon-plus"></i>&nbsp;Add</a>
-                        <a href="album.php" class="btn"><i class="icon-list-alt"></i>&nbsp;User</a>
+                    <legend>RANTING - ADD&nbsp;
+                        <a href="ranting_add.php" class="btn"><i class="icon-plus"></i>&nbsp;Add</a>
+                        <a href="ranting.php" class="btn"><i class="icon-list-alt"></i>&nbsp;Ranting</a>
                     </legend> 
                 </div>
             </div>
             
             <div class="row-fluid">
+                <div class="span4">&nbsp;</div>
+                <div class="span4" style="text-align: center; margin-bottom: 5px;"><?php include "subviews/msg.php";?></div>
+                <div class="span4">&nbsp;</div>
+            </div>
+            
+            <div class="row-fluid">
                 <div class="span12">
-                    <form name="form1" id="form1" action="album_proc.php" method="POST">
+                    <form name="form1" id="form1" action="ranting_proc.php" method="POST">
                         <table class="table table-bordered table-condensed table-striped" width="100%">
                             <tr>
-                                <td>ID</td>
-                                <td><input type="text" name="id" class="span2" readonly="readonly" value="AUTO"></td>
+                                <td width="15%">No. ID</td>
+                                <td><input type="text"  name="id" class="span1" readonly="readonly" value="AUTO"></td>
                             </tr>
                             <tr>
-                                <td>Name</td>
-                                <td><input type="text" name="name" id="name" class="span5 validate[required,custom[onlyLetterSp]]"></td>
+                                <td>Desa</td>
+                                <td><input type="text" id="desa" name="desa" class="span2"></td>
                             </tr>
                             <tr>
-                                <td>Description</td>
-                                <td><textarea name="description" class="span8 validate[maxSize[33]]" rows="2"></textarea></td>
+                                <td>Jumlah RW</td>
+                                <td><input type="text" name="jml_rw" class="span1"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah Anak Ranting</td>
+                                <td><input type="text" name="jml_anak_ranting" class="span1"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah TPS</td>
+                                <td><input type="text" name="jml_tps" class="span1"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah DPS</td>
+                                <td><input type="text" name="jml_dps" class="span1"></td>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
                                     <input type="submit" name="save" class="btn" value="Save">
                                     <input type="hidden" name="action" class="btn" value="insert">
-                                    &nbsp;<a href="album.php" class="btn">Back</a>
+                                    &nbsp;<a href="ranting.php" class="btn">Back</a>
                                 </td>
                             </tr>
                         </table>    

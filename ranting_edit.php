@@ -9,7 +9,6 @@
         
         <script type="text/javascript">
             $(document).ready(function(){
-                $('.dropdown-toggle').dropdown();
                 $('#form1').validationEngine();
                 $("#dob").datepicker({
                     dateFormat: 'yy/mm/dd',
@@ -17,6 +16,7 @@
                     changeYear: true,
                     yearRange: '1940:2030'
                 });
+                //$("#kecamatan").focus();
             })
             
         </script>
@@ -28,9 +28,9 @@
         <div class="container-fluid">
             <div class="row-fluid">
                 <div class="span12">
-                    <legend>ALBUM - ADD&nbsp;
-                        <a href="album_add.php" class="btn"><i class="icon-plus"></i>&nbsp;Add</a>
-                        <a href="album.php" class="btn"><i class="icon-list-alt"></i>&nbsp;User</a>
+                    <legend>RANTING - ADD&nbsp;
+                        <a href="ranting_add.php" class="btn"><i class="icon-plus"></i>&nbsp;Add</a>
+                        <a href="ranting.php" class="btn"><i class="icon-list-alt"></i>&nbsp;RANTING</a>
                     </legend> 
                 </div>
             </div>
@@ -43,32 +43,44 @@
             
             <?php
                 $id = $_GET['id'];
-                $sql = "SELECT * FROM album WHERE id='$id'";
+                $sql = "SELECT * FROM gerindra_ranting WHERE id='$id'";
                 $data = $db->fetchdata($sql);
             ?>
             
             <div class="row-fluid">
                 <div class="span12">
-                    <form name="form1" id="form1" action="album_proc.php" method="POST">
+                    <form name="form1" id="form1" action="ranting_proc.php" method="POST">
                         <table class="table table-bordered table-condensed table-striped" width="100%">
                             <tr>
-                                <td>ID</td>
-                                <td><input type="text" name="id" class="span2" readonly="readonly" value="<?php echo $data['id']; ?>"></td>
+                                <td width="15%">No. ID</td>
+                                <td><input type="text"  name="id" class="span1" readonly="readonly" value="<?php echo $data['id']; ?>"></td>
                             </tr>
                             <tr>
-                                <td>Name</td>
-                                <td><input type="text" name="name" class="span5 validate[required,custom[onlyLetterSp]]" value="<?php echo $data['name']; ?>"></td>
+                                <td>Desa</td>
+                                <td><input type="text" name="desa" class="span2" value="<?php echo $data['desa']; ?>"></td>
                             </tr>
                             <tr>
-                                <td>Description</td>
-                                <td><textarea name="description" class="span8 validate[maxSize[33]]" rows="2"><?php echo $data['description']; ?></textarea></td>
+                                <td>Jumlah RW</td>
+                                <td><input type="text" name="jml_rw" class="span1" value="<?php echo $data['jml_rw']; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah Anak Ranting</td>
+                                <td><input type="text" name="jml_anak_ranting" class="span1" value="<?php echo $data['jml_anak_ranting']; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah TPS</td>
+                                <td><input type="text" name="jml_tps" class="span1" value="<?php echo $data['jml_tps']; ?>"></td>
+                            </tr>
+                            <tr>
+                                <td>Jumlah DPS</td>
+                                <td><input type="text" name="jml_dps" class="span1" value="<?php echo $data['jml_dps']; ?>"></td>
                             </tr>
                             <tr>
                                 <td>&nbsp;</td>
                                 <td>
                                     <input type="submit" name="save" class="btn" value="Save">
                                     <input type="hidden" name="action" class="btn" value="update">
-                                    &nbsp;<a href="album.php" class="btn">Back</a>
+                                    &nbsp;<a href="ranting.php" class="btn">Back</a>
                                 </td>
                             </tr>
                         </table>    
